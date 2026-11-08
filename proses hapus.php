@@ -2,7 +2,7 @@
 session_start();
 require_once 'koneksi.php';
 
-if (isset($koneksi) && isset($_GET['id'])) {
+if (isset($koneksi) && $koneksi && isset($_GET['id'])) {
     $id = (int)$_GET['id'];
 
     $query = "DELETE FROM kas WHERE id = '$id'";
