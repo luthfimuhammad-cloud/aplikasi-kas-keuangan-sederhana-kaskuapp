@@ -52,96 +52,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        body {
-            background-color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .login-box {
-            background: #ffffff;
-            width: 100%;
-            max-width: 380px;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-        }
-        .login-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .login-header i {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .login-header h2 {
-            font-size: 1.4rem;
-            color: #0f172a;
-        }
-        .login-header h2 span {
-            color: #38bdf8;
-        }
-        .error {
-            background-color: #fef2f2;
-            color: #ef4444;
-            border: 1px solid #fca5a5;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #0f172a;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            outline: none;
-            font-size: 0.9rem;
-            background: #f8fafc;
-        }
-        .form-group input:focus {
-            background: #ffffff;
-            border-color: #2563eb;
-        }
-        .btn-login {
-            width: 100%;
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            padding: 11px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-            transition: background 0.2s;
-        }
-        .btn-login:hover {
-            background-color: #1d4ed8;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .login-box { background: #ffffff; width: 100%; max-width: 380px; padding: 2.5rem 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .login-header { text-align: center; margin-bottom: 2rem; }
+        .login-header i { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 12px; border-radius: 10px; font-size: 1.5rem; margin-bottom: 10px; }
+        .login-header h2 { font-size: 1.4rem; color: #0f172a; }
+        .login-header h2 span { color: #38bdf8; }
+        .error { background-color: #fef2f2; color: #ef4444; border: 1px solid #fca5a5; padding: 10px; border-radius: 8px; font-size: 0.85rem; text-align: center; margin-bottom: 1.25rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #0f172a; }
+        .form-group input { width: 100%; padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none; font-size: 0.9rem; background: #f8fafc; }
+        .btn-login { width: 100%; background-color: #2563eb; color: white; border: none; padding: 11px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.95rem; margin-top: 0.5rem; }
+        .btn-login:hover { background-color: #1d4ed8; }
     </style>
 </head>
 <body>
