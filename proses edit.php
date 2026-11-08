@@ -2,8 +2,7 @@
 session_start();
 require_once 'koneksi.php';
 
-if (isset($koneksi) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+if (isset($koneksi) && $koneksi && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $id         = (int)($_POST['id'] ?? 0);
     $tanggal    = mysqli_real_escape_string($koneksi, $_POST['tanggal'] ?? '');
     $keterangan = mysqli_real_escape_string($koneksi, $_POST['keterangan'] ?? '');
@@ -15,7 +14,7 @@ if (isset($koneksi) && $_SERVER['REQUEST_METHOD'] === 'POST') {
                 keterangan = '$keterangan',
                 jenis      = '$jenis',
                 jumlah     = '$jumlah' 
-            WHERE id = '$id'";
+              WHERE id = '$id'";
 
     if (mysqli_query($koneksi, $query)) {
         header("Location: UTS aplikasi.php");
