@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Kas Keuangan Sederhana</title>
+    <title>Aplikasi Kas Keuangan Sederhana - KasKuApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -143,30 +143,30 @@
         }
 
         .card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             flex-shrink: 0;
         }
 
         .card-pemasukan .card-icon { background: var(--success-bg); color: var(--success); }
         .card-pengeluaran .card-icon { background: var(--danger-bg); color: var(--danger); }
-        .card-saldo .card-icon { background: #eff6ff; color: var(--primary); }
+        .card-saldo .card-icon { background: linear-gradient(135deg, #dbeafe, #eff6ff); color: var(--primary); border: 1px solid #bfdbfe; }
 
         .card-details p {
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
         .card-details h3 {
-            font-size: 1.5rem;
+            font-size: 1.55rem;
             font-weight: 700;
             margin-top: 4px;
             color: var(--text-main);
@@ -428,33 +428,30 @@
     </header>
 
     <main class="container">
-
-     
         <section class="cards-grid">
             <div class="card card-pemasukan">
-                <div class="card-icon"><i class="fa-solid fa-arrow-down-left"></i></div>
+                <div class="card-icon"><i class="fa-solid fa-circle-arrow-down"></i></div>
                 <div class="card-details">
                     <p>Total Pemasukan</p>
-                    <h3 id="totalPemasukan">Rp 5.500.000</h3>
+                    <h3 id="totalPemasukan">Rp 500.000</h3>
                 </div>
             </div>
             <div class="card card-pengeluaran">
-                <div class="card-icon"><i class="fa-solid fa-arrow-up-right"></i></div>
+                <div class="card-icon"><i class="fa-solid fa-circle-arrow-up"></i></div>
                 <div class="card-details">
                     <p>Total Pengeluaran</p>
-                    <h3 id="totalPengeluaran">Rp 1.200.000</h3>
+                    <h3 id="totalPengeluaran">Rp 150.000</h3>
                 </div>
             </div>
             <div class="card card-saldo">
-                <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="card-icon"><i class="fa-solid fa-wallet"></i></div>
                 <div class="card-details">
                     <p>Saldo Kas Saat Ini</p>
-                    <h3 id="totalSaldo">Rp 4.300.000</h3>
+                    <h3 id="totalSaldo">Rp 350.000</h3>
                 </div>
             </div>
         </section>
 
-      
         <section class="table-container">
             <div class="table-header">
                 <h3><i class="fa-solid fa-receipt"></i> Riwayat Transaksi Kas</h3>
@@ -476,7 +473,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
                         <tr>
                             <td>1</td>
                             <td>2026-03-01</td>
@@ -513,7 +509,6 @@
         </section>
     </main>
 
-   
     <div class="modal" id="modalForm">
         <div class="modal-content">
             <div class="modal-header">
@@ -555,7 +550,6 @@
         </div>
     </div>
 
-   
     <script>
         const modal = document.getElementById('modalForm');
         const modalTitle = document.getElementById('modalTitle');
@@ -569,11 +563,11 @@
                 kasForm.action = 'proses_simpan.php';
                 kasForm.reset();
                 document.getElementById('transaksiId').value = '';
+                document.getElementById('tanggal').value = new Date().toISOString().split('T')[0];
             } else if (mode === 'edit') {
                 modalTitle.innerText = 'Edit Transaksi Kas';
                 kasForm.action = 'proses_edit.php';
 
-               
                 document.getElementById('transaksiId').value = id;
                 document.getElementById('tanggal').value = tanggal;
                 document.getElementById('keterangan').value = keterangan;
@@ -586,7 +580,6 @@
             modal.style.display = 'none';
         }
 
-       
         window.onclick = function(event) {
             if (event.target === modal) {
                 closeModal();
